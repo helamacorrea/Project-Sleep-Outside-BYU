@@ -41,3 +41,18 @@ function cartItemTemplate(item) {
 }
 
 renderCartContents();
+
+function countItems() {
+  const items = JSON.parse(localStorage.getItem("so-cart")) || [];
+  const countItems = items.length;
+
+  if (countItems != 0) {
+    document.querySelector("#itemsCount").innerHTML = `Quantity: ${countItems}`;
+  }
+
+  else {
+    document.querySelector("#itemsCount").innerHTML = `Quantity: 0`;
+  }
+}
+
+countItems();

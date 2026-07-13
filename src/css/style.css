@@ -90,7 +90,7 @@ p {
   margin-top: -1.3em;
 }
 
-.logo--square > div {
+.logo--square>div {
   margin-top: -1.7em;
 }
 
@@ -264,4 +264,11 @@ button {
 footer {
   font-size: var(--small-font);
   padding: 1em;
+}
+
+.count-items {
+  max-width: fit-content;
+  border-bottom: 1.5px solid rgb(35, 62, 121);
+  text-align: right;
+  margin-left: 12px;
 }
