@@ -28,7 +28,7 @@ export function getParam(param) {
   const urlParams = new URLSearchParams(queryString);
   const product = urlParams.get(param);
   return product
-} 
+}
 
 export function renderListWithTemplate(template, parentElement, list, position = "afterbegin", clear = false) {
   const htmlStrings = list.map(template);
@@ -37,4 +37,30 @@ export function renderListWithTemplate(template, parentElement, list, position =
     parentElement.innerHTML = "";
   }
   parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
+
+}
+
+export function renderWithTemplate(template, parentElement, data, callback) {
+
+  parentElement.innerHTML = template;
+  if (callback) {
+    callback(data);
+  }
+}
+
+
+export async function loadTemplate(path) {
+  const rest = await fetch(path);
+  const template = await rest.text();
+  return template;
+}
+
+export async function loadHeaderFooter() {
+  const headerTemplate = await loadTemplate("../public/partials/header.html");
+  const headerElement = document.querySelector("#main-header");
+  renderWithTemplate(headerTemplate, headerElement);
+
+  const footerTemplate = await loadTemplate("../public/partials/footer.html");
+  const footerElement = document.querySelector("#main-footer");
+  renderWithTemplate(footerTemplate, footerElement);
 }
