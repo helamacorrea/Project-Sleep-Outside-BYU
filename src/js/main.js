@@ -16,16 +16,14 @@ productList.init();
 // COUNTING ITEMS IN CART
 
 function countElements() {
-    const items = JSON.parse(localStorage.getItem("so-cart")) || [];
-    const countItems = items.length;
+  const items = JSON.parse(localStorage.getItem("so-cart")) || [];
+  const countItems = items.length;
 
-    if (countItems != 0) {
-        document.querySelector("#cart-count").innerHTML = `Qty: ${countItems}`;
-    }
-
-    else {
-        document.querySelector("#cart-count").innerHTML = `Qty: 0`;
-    }
+  if (countItems != 0) {
+    document.querySelector("#cart-count").innerHTML = `Qty: ${countItems}`;
+  } else {
+    document.querySelector("#cart-count").innerHTML = `Qty: 0`;
+  }
 }
 
 countElements();

@@ -15,7 +15,8 @@ function renderCartContents() {
 
     const cartFooter = document.querySelector(".cart-footer");
     console.log(total);
-    document.querySelector(".cart-total").innerHTML = `Total: $${total.toFixed(2)}`;
+    document.querySelector(".cart-total").innerHTML =
+      `Total: $${total.toFixed(2)}`;
     cartFooter.classList.remove("hide");
   } else {
     //in case the cart is empty
@@ -51,9 +52,7 @@ function countItems() {
 
   if (countItems != 0) {
     document.querySelector("#itemsCount").innerHTML = `Quantity: ${countItems}`;
-  }
-
-  else {
+  } else {
     document.querySelector("#itemsCount").innerHTML = `Quantity: 0`;
   }
 }
