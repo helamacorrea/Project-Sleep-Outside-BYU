@@ -1,5 +1,9 @@
 import ProductData from "./ProductData.mjs";
 import ProductList from "./ProductList.mjs";
+import { loadHeaderFooter } from "./utils.mjs";
+
+// CALLING THE LOAD HEADER AND FOOTER TO INDEX.HTML
+loadHeaderFooter();
 
 const dataSource = new ProductData("tents");
 
