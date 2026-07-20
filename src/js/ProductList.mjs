@@ -20,9 +20,11 @@ export default class ProductList {
 
     async init() {
         const list = await this.dataSource.getData();
-        console.log("Produtos carregados:", list);
+        console.log("Products loaded:", list);
+        // Only show the products that have detail pages
+        const displayProducts = list.slice(0, 6);
 
-        this.renderList(list);
+        this.renderList(displayProducts);
     }
 
     renderList(list) {
